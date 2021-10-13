@@ -1,0 +1,45 @@
+C:\Windows\system32>docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Windows\system32>docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    597ce1600cf4   10 days ago   72.8MB
+
+C:\Windows\system32>docker run -d -it --name Test_Alp devopsdockeruh/simple-web-service:alpine
+Unable to find image 'devopsdockeruh/simple-web-service:alpine' locally
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete
+1dace236434b: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+a1025b89350e7d8dcc3c87c42096d89eb46a68694e9aecb2569b5127a4dcc3ac
+
+C:\Windows\system32>docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+ubuntu                              latest    597ce1600cf4   10 days ago    72.8MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   7 months ago   15.7MB
+
+C:\Windows\system32>docker exec -it Test_Alp sh
+/usr/src/app # ls
+server    text.log
+/usr/src/app # tail -f text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-10-11 17:42:05 +0000 UTC
+2021-10-11 17:42:07 +0000 UTC
+2021-10-11 17:42:09 +0000 UTC
+2021-10-11 17:42:11 +0000 UTC
+2021-10-11 17:42:13 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-10-11 17:42:15 +0000 UTC
+2021-10-11 17:42:17 +0000 UTC
+2021-10-11 17:42:20 +0000 UTC
+2021-10-11 17:42:22 +0000 UTC
+2021-10-11 17:42:24 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-10-11 17:42:26 +0000 UTC
+2021-10-11 17:42:28 +0000 UTC
+2021-10-11 17:42:30 +0000 UTC
+2021-10-11 17:42:32 +0000 UTC
+2021-10-11 17:42:34 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
